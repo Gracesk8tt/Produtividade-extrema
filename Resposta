@@ -1,0 +1,19 @@
+function solucao(produtividadeDosFuncionarios) {
+ const maxProdutividade = Math.max(...produtividadeDosFuncionarios);
+    const limiteDemitir = maxProdutividade * 0.3;
+
+    let funcionariosDemitidos = 0;
+
+    for (const produtividade of produtividadeDosFuncionarios) {
+        if (produtividade <= limiteDemitir) {
+            funcionariosDemitidos++;
+        }
+    }
+
+    console.log (funcionariosDemitidos);
+}
+
+function processData(input) {
+    const produtividadeDosFuncionarios = input.trim().split(" ").map(x => Number(x));
+  	solucao(produtividadeDosFuncionarios);
+} 
